@@ -1,0 +1,7 @@
+name = GSB Filtered View Link
+description = Makes a link that you can put in the header so people can copy the url of the filtered view.
+package = GSB
+core = 7.x
+
+files[] = gsb_filtered_view_link_handler_area_filtered_view_link.inc
+

@@ -1,0 +1,25 @@
+<?php
+/**
+ * Implements hook_views_api().
+ */
+function gsb_filtered_view_link_views_api() {
+  return array(
+    'api' => 3,
+  );
+}
+
+/**
+ * Implements hook_views_data().
+ */
+function gsb_filtered_view_link_views_data() {
+  $data = array();
+
+  $data['gsb__global']['gsb_filtered_view_link'] = array(
+    'title' => t('Filtered View link'),
+    'help' => t('Displays a link that allows people to copy a direct url to the current filtered link.'),
+    'area' => array(
+      'handler' => 'gsb_filtered_view_link_handler_area_add_link',
+    ),
+  );
+  return $data;
+}
