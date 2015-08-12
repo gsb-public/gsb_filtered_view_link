@@ -1,13 +1,7 @@
 <?php
 /**
- * Implements hook_views_api().
+ * Implements hook_form_views_exposed_form_alter().
  */
-function gsb_filtered_view_link_views_api() {
-  return array(
-    'api' => 3,
-  );
-}
-
 function gsb_filtered_view_link_form_views_exposed_form_alter(&$form, &$form_state) {
   global $user;
   if ($user->uid == 1 || array_intersect(array('section manager', 'marketing_admin', 'administrator'), array_values($user->roles))) {
