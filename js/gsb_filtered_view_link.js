@@ -1,8 +1,10 @@
 (function ($) {
   Drupal.behaviors.gsb_filtered_view_link = {
     attach: function (context, settings) {
-      $link = $('<a href="#">' + Drupal.t('Show the direct url to this filter') + '</a>');
+      $('.gsb-direct-link').remove();
+      $link = $('<a class="gsb-direct-link" href="#">' + Drupal.t('Show the direct url to this filter') + '</a>');
       $('.views-exposed-form').prepend($link);
+
       $link.click(function(e) {
         e.preventDefault();
         url = location.protocol + "//" + location.hostname + location.pathname + "?";

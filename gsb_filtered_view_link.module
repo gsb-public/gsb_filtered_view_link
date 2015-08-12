@@ -8,18 +8,9 @@ function gsb_filtered_view_link_views_api() {
   );
 }
 
-/**
- * Implements hook_views_data().
- */
-function gsb_filtered_view_link_views_data() {
-  $data = array();
-
-  $data['gsb__global']['gsb_filtered_view_link'] = array(
-    'title' => t('Filtered View link'),
-    'help' => t('Displays a link that allows people to copy a direct url to the current filtered link.'),
-    'area' => array(
-      'handler' => 'gsb_filtered_view_link_handler_area_add_link',
-    ),
-  );
-  return $data;
+function gsb_filtered_view_link_form_views_exposed_form_alter(&$form, &$form_state) {
+  global $user;
+  if ($user->uid == 1 || array_intersect(array('section manager', 'marketing_admin', 'administrator'), array_values($user->roles))) {
+    drupal_add_js(drupal_get_path('module', 'gsb_filtered_view_link') . '/js/gsb_filtered_view_link.js');
+  }
 }
