@@ -19,7 +19,7 @@
       }
 
       $('.gsb-direct-link').remove();
-      $wrapper = $('<div class=""gsb-direct-link"></div>');
+      $wrapper = $('<div class="gsb-direct-link"></div>');
       $link = $('<a href="#">' + link_text + '</a>');
       $wrapper.prepend($link);
       $wrapper.append('<br />');
