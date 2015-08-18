@@ -62,7 +62,7 @@
       tid = $(this).attr('value');
       url += name + '=' + tid + '&';
     });
-    $('.view-filters input[type="text"]:not(".link-box")').each(function() {
+    $('.view-filters input[type="text"]:not(".link-box"), .view-filters select').each(function() {
       if ($(this).val()) {
         url += $(this).attr('name') + "=" + $(this).val() + '&';
       }
