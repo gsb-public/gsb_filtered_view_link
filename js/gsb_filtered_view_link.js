@@ -23,7 +23,7 @@
       $link = $('<a href="#">' + link_text + '</a>');
       $wrapper.prepend($link);
       $wrapper.append('<br />');
-      $input = $('<input class="ctools-auto-submit-exclude link-box" style="width: 550px; margin: 10px;" type="text" value="" />');
+      $input = $('<input class="ctools-auto-submit-exclude link-box" style="width: 520px; margin: 10px 0;" type="text" value="" />');
       $wrapper.append($input);
       $('.views-exposed-form').prepend($wrapper);
 
